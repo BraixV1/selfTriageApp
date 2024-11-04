@@ -49,4 +49,6 @@ export abstract class BaseEngine {
         return this._currentQuestionIndex > 0
     }
 
+    
+
 }

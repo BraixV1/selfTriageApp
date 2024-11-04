@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Use a specific font weight if needed */
+p {
+    font-weight: 400; /* Change this to the desired weight, e.g., 400 for normal */
+    font-style: normal;
+}

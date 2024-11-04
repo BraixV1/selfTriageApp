@@ -1,4 +1,4 @@
 export enum EResult {
-    FamilyDoctor = "palun kontakteeruga perearstiga",
-    EmergencyRoom = "palun poorduge EMO-sse"
+    FamilyDoctor = "palun kontakteeruge perearstiga",
+    EmergencyRoom = "palun pöörduge EMO-sse"
 }

@@ -4,7 +4,7 @@ import { EResult } from '@/types/EResult';
 export default class NeurologyEngine extends BaseEngine{
 
     constructor(){
-        super("Neuroloogia", [
+        super("Teadvushäire, minestamine, neuroloogia", [
             {
                 contentEst: "Pikema perioodi vältel esinenud teadvusekaotuse, kuid mitte viimase 24 tunni jooksul",
                 result: EResult.FamilyDoctor,
