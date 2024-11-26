@@ -1,20 +1,18 @@
 'use client';
 import { useState } from 'react';
-import NeurologyEngine from '../engine/NeurologoyEngine';
 import { BaseEngine } from '@/engine/BaseEngine';
 import { EResult } from '@/types/HelperEnums/EResult';
 import { EGender } from '@/types/HelperEnums/EGender';
-import HeadacheEngine from '../engine/HeadacheEngine';
+import { Engines } from '@/engine/Engines';
 
 export default function Home() {
-  const [neurologyEngine] = useState(() => new NeurologyEngine(EGender.any, -1));
-  const [headacheEngine] = useState(() => new HeadacheEngine(EGender.any, -1))
+  const [engineList] = useState(() => new Engines())
   const [currentEngine, setCurrentEngine] = useState<BaseEngine | null>();
   const [result, setResult] = useState<EResult | null>(null);
   const [dummyState, setDummyState] = useState(false);
   const [age, setAge] = useState<number | null>(null);
   const [validationError, setValidationError] = useState("");
-  const [gender, setGender] = useState<EGender | null>(null);
+  const [gender, setGender] = useState<EGender | null>(EGender.male);
   const [ageFlag, setAgeFlag] = useState(false);
   const [genderFlag, setGenderFlag] = useState(false);
 
@@ -41,8 +39,18 @@ export default function Home() {
   };
 
   const switchEngine = (engine: BaseEngine) => {
+    if (age) {
+      engine.setAge(age)
+    }
+    if (gender) {
+      engine.setGender(gender)
+    }
     setCurrentEngine(engine);
   };
+
+  const resetEngine = () => {
+    setCurrentEngine(null)
+  }
 
   const validateAge = () => {
     if (age === null || isNaN(age)) {
@@ -82,6 +90,7 @@ export default function Home() {
               value={age ?? ""}
               onChange={(e) => {
                 const newAge = e.target.valueAsNumber;
+                console.log(newAge)
                 setAge(!isNaN(newAge) ? newAge : null);
                 setValidationError("");
               }}
@@ -111,16 +120,19 @@ export default function Home() {
         <div>
           <p>Millises piirkonnas on probleemid</p>
           <div className='flex flex-row w-full justify-center space-x-4'>
-            <button className='border-4 border-darkGreen bg-darkerGreen text-white'
-            onClick={(e) => setCurrentEngine(neurologyEngine)}>Minestamine</button>
-            <button className='border-4 border-darkGreen bg-darkerGreen text-white'
-            onClick={(e) => setCurrentEngine(headacheEngine)}>Peavalu</button>
-          </div>
+            {engineList.engines.map((engine, i) => (
+              <button key={i} className='border-4 border-darkGreen bg-darkerGreen text-white'
+              onClick={() => switchEngine(engine)}>{engine.getName()}</button>
+            ))}
+            </div>
         </div>
       ) : currentEngine.getCurrentQuestion() ? (
         <div>
-          <p>{currentEngine.getName()}</p>
-          <p>{currentEngine.getCurrentQuestion()!.contentEst}</p>
+          <p className='text-2xl'>{currentEngine.getName()}</p>
+          <p className='text-2xl'>Kas teil on ilmnenud järgnev sümptom?</p>
+          <br />
+          <p className='text-2xl'>{currentEngine.getCurrentQuestion()!.contentEst}</p>
+          <br />
           <div className="flex flex-row w-full justify-center">
             <button
               className="flex text-center bg-green border-4 border-darkerGreen rounded mx-4 p-1 px-8"
@@ -139,6 +151,12 @@ export default function Home() {
               onClick={switchToPrevious}
             >
               Eelmine küsimus
+            </button>
+            <button
+              className="flex text-center bg-green border-4 border-darkerGreen rounded mx-4 p-1 px-8"
+              onClick={resetEngine}
+            >
+              Muuda probleemi piirkonda
             </button>
           </div>
         </div>
