@@ -3,12 +3,12 @@ import { BaseEngine } from "./BaseEngine";
 import { EResult } from "@/types/HelperEnums/EResult";
 
 
-export default class EarEngine extends BaseEngine {
+export default class ChestEngine extends BaseEngine {
 
     constructor(gender: EGender, age: number) {
-        super ("Kõrva probleemid", gender, age, [
+        super("Rindkerevalu", gender, age, [
             {
-                contentEst: "võõrkeha väliskuulmekäigus(kõrveas)",
+                contentEst: "rindkerevalu koos äkki tekkinud õhupuudusega",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
                 gender: EGender.any,
@@ -16,7 +16,7 @@ export default class EarEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "kõrvavalu foonil tekkinud mädane eriti kõrvast",
+                contentEst: "rindkere valu koos ebakorrapärase südamerütmiga (süda jätab lööke vahele)",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
                 gender: EGender.any,
@@ -24,15 +24,55 @@ export default class EarEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "kõrvavalu koos kõrge palavikuga (38.5°C+)",
+                contentEst: "valu rinnus kiirgusega kätte/kätesse, abaluude vahele, selga, lõuga, ülakõhtu",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
                 gender: EGender.any,
-                minAge: 60,
+                minAge: null,
                 maxAge: null
             },
             {
-                contentEst: "kõrvataguse naha punetus ja turse",
+                contentEst: "tugev rõhuv, pigistav, kõreveta rindekerevalu",
+                result: EResult.EmergencyRoom,
+                contentEng: null,
+                gender: EGender.any,
+                minAge: null,
+                maxAge: null
+            },
+            {
+                contentEst: "rindkerevalu koos minestusega",
+                result: EResult.EmergencyRoom,
+                contentEng: null,
+                gender: EGender.any,
+                minAge: null,
+                maxAge: null
+            },
+            {
+                contentEst: "rindkerevalu koos iivelduse, oksendamisega",
+                result: EResult.EmergencyRoom,
+                contentEng: null,
+                gender: EGender.any,
+                minAge: null,
+                maxAge: null
+            },
+            {
+                contentEst: "terav rindkerevalu hingamisel ja katsudes rindkere valu ei ole",
+                result: EResult.EmergencyRoom,
+                contentEng: null,
+                gender: EGender.any,
+                minAge: null,
+                maxAge: null
+            },
+            {
+                contentEst: "trauma järgne rindkerevalu",
+                result: EResult.EmergencyRoom,
+                contentEng: null,
+                gender: EGender.any,
+                minAge: null,
+                maxAge: null
+            },
+            {
+                contentEst: "katsudes valulik rindkere",
                 result: EResult.FamilyDoctor,
                 contentEng: null,
                 gender: EGender.any,
@@ -40,7 +80,7 @@ export default class EarEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "kõrvalesta tugev punetus ja turse",
+                contentEst: "rindkere valulikkus liigutades(ilma traumata)",
                 result: EResult.FamilyDoctor,
                 contentEng: null,
                 gender: EGender.any,
@@ -48,78 +88,17 @@ export default class EarEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "üle 24h kestnud kõrvavalu",
+                contentEst: "torkiva iseloomuga valu rindkeres, mis lokaliseerub kindlasse punkti ning ei süvene koormusega",
                 result: EResult.FamilyDoctor,
                 contentEng: null,
                 gender: EGender.any,
                 minAge: null,
                 maxAge: null
             },
-            {
-                contentEst: "sügelustunne kuulmekäigus",
-                result: EResult.FamilyDoctor,
-                contentEng: null,
-                gender: EGender.any,
-                minAge: null,
-                maxAge: null
-            },
-            {
-                contentEst: "kõrvavaik mida koduste meetoditega välja ei saa",
-                result: EResult.FamilyDoctor,
-                contentEng: null,
-                gender: EGender.any,
-                minAge: null,
-                maxAge: null
-            },
-            {
-                contentEst: "kõrvade lukustunne",
-                result: EResult.FamilyDoctor,
-                contentEng: null,
-                gender: EGender.any,
-                minAge: null,
-                maxAge: null
-            },
-            {
-                contentEst: "kuulmislangus",
-                result: EResult.FamilyDoctor,
-                contentEng: null,
-                gender: EGender.any,
-                minAge: null,
-                maxAge: null
-            },
-            {
-                contentEst: "vilin/tinnitus kõrvas ilma väikese kuulmislanguseta",
-                result: EResult.FamilyDoctor,
-                contentEng: null,
-                gender: EGender.any,
-                minAge: null,
-                maxAge: null
-            },
-            {
-                contentEst: "kõik kõrvahaigusega seotud kaebused",
-                result: EResult.Pharmacy,
-                contentEng: null,
-                gender: EGender.any,
-                minAge: null,
-                maxAge: null
-            },
-            {
-                contentEst: "külmetusest ja/või viirushaigusest tulenev kõrvaprobleem",
-                result: EResult.FamilyDoctor,
-                contentEng: null,
-                gender: EGender.any,
-                minAge: null,
-                maxAge: null
-            },
-            {
-                contentEst: "alla 24h kestnud kõrva valu",
-                result: EResult.FamilyDoctor,
-                contentEng: null,
-                gender: EGender.any,
-                minAge: null,
-                maxAge: null
-            },
+
+
         ])
+
     }
 
 }

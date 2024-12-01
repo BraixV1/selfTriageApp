@@ -57,14 +57,6 @@ export default class BreathingEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "vilistav hingamine",
-                result: EResult.EmergencyRoom,
-                contentEng: null,
-                gender: EGender.any,
-                minAge: null,
-                maxAge: null
-            },
-            {
                 contentEst: "õhupuudus koos valuga rinnus",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
@@ -113,6 +105,14 @@ export default class BreathingEngine extends BaseEngine {
                 maxAge: null
             },
             {
+                contentEst: "palavik koos hingeldusega",
+                result: EResult.EmergencyRoom,
+                contentEng: null,
+                gender: EGender.any,
+                minAge: 60,
+                maxAge: null
+            },
+            {
                 contentEst: "köha koos kõrge palavikuga (38.5°C+)",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
@@ -122,6 +122,14 @@ export default class BreathingEngine extends BaseEngine {
             },
             {
                 contentEst: "rögas verekiud",
+                result: EResult.FamilyDoctor,
+                contentEng: null,
+                gender: EGender.any,
+                minAge: null,
+                maxAge: null
+            },
+            {
+                contentEst: "vilistav hingamine",
                 result: EResult.FamilyDoctor,
                 contentEng: null,
                 gender: EGender.any,
