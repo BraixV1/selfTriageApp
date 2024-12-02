@@ -2,20 +2,12 @@ import { EGender } from "@/types/HelperEnums/EGender";
 import { BaseEngine } from "./BaseEngine";
 import { EResult } from "@/types/HelperEnums/EResult";
 
-export default class BackEngine extends BaseEngine {
+export default class feverEngine extends BaseEngine {
 
     constructor(gender: EGender, age: number) {
-        super("seljaprobleem", gender, age, [
+        super("Palavik", gender, age, [
             {
-                contentEst: "esmakordselt tekkinud, kiiresti tugenev valu seljas",
-                result: EResult.EmergencyRoom,
-                contentEng: null,
-                gender: EGender.any,
-                minAge: 60,
-                maxAge: null
-            },
-            {
-                contentEst: "värske seljatrauma, mille järgselt ei suuda inimene liigutada varbaid ning esineb nõrkus ühes või mõlemas alajäsemes",
+                contentEst: "ravile allumatu kõrge palavik (38.5°C+)",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
                 gender: EGender.any,
@@ -23,7 +15,7 @@ export default class BackEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "seljavalu koos kontrolli kaotus põie- või sooletegevuse üle",
+                contentEst: "palavik + hingeldus, kahvatus, külm higi",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
                 gender: EGender.any,
@@ -31,7 +23,7 @@ export default class BackEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "selja või traumast tulenev verevalum",
+                contentEst: "suu avamise häire koos näo- ja kaela tursega",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
                 gender: EGender.any,
@@ -39,15 +31,7 @@ export default class BackEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "järsku tekkinud, tugenev valu seljas",
-                result: EResult.EmergencyRoom,
-                contentEng: null,
-                gender: EGender.any,
-                minAge: null,
-                maxAge: 60
-            },
-            {
-                contentEst: "seljavalu koos jalaliikuvuse või jõudluse häirega",
+                contentEst: "vedelikupuudusega koos oksendamise ja/või kõhulahtisusega",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
                 gender: EGender.any,
@@ -55,7 +39,7 @@ export default class BackEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "seljavalu koos valuliku urineerimise ja kõrge palavik (38.5°C+) ",
+                contentEst: "peavalu, valguskartus, lõuga  ei saa rinnale panna (kuklakangestus)",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
                 gender: EGender.any,
@@ -63,7 +47,7 @@ export default class BackEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "seljavalu koos kõrge palaviku (38.5°C+), iivelduse ja oksendamisega",
+                contentEst: "hiljutine reis (2 nädalat) epidemiloogilise infektsioonhaiguse riskiga riiki",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
                 gender: EGender.any,
@@ -71,7 +55,7 @@ export default class BackEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "äge, tugev valu seljas ja tundlikkushäired jäsemetes",
+                contentEst: "immuunpuudulikkus",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
                 gender: EGender.any,
@@ -79,7 +63,7 @@ export default class BackEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "seljavalu koos progresseeruva jalgade nõrkusega",
+                contentEst: "kõrge palavik(38.5°C+) koos hingeldusega mis ei allu ravile",
                 result: EResult.EmergencyRoom,
                 contentEng: null,
                 gender: EGender.any,
@@ -87,15 +71,7 @@ export default class BackEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "trauma järgselt (nädala jooksul), süvenev seljavalu või jäsemete tuimus",
-                result: EResult.EmergencyRoom,
-                contentEng: null,
-                gender: EGender.any,
-                minAge: null,
-                maxAge: null
-            },
-            {
-                contentEst: "korduv seljavalu, mis oluliselt ei takista kõndimist",
+                contentEst: "viis või enam päeva kestnud väike palavik",
                 result: EResult.FamilyDoctor,
                 contentEng: null,
                 gender: EGender.any,
@@ -103,7 +79,7 @@ export default class BackEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "krooniline seljavalu, mis ei allu valuravi skeemile",
+                contentEst: "valulik köha",
                 result: EResult.FamilyDoctor,
                 contentEng: null,
                 gender: EGender.any,
@@ -111,7 +87,7 @@ export default class BackEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "seljavalu, mis takistab kõndimist",
+                contentEst: "palavik + korduv, mõõduka tugevusega peavalu, mis ei allu ravimitele",
                 result: EResult.FamilyDoctor,
                 contentEng: null,
                 gender: EGender.any,
@@ -119,7 +95,7 @@ export default class BackEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "seljavalu, mis kiirgub puusa ja/või jalga (radikulaarne valu) ning mis oluliselt takistab kõndimist",
+                contentEst: "ülemiste hingamisteede külmetushaigused, mis on kestnud enam kui viis päeva",
                 result: EResult.FamilyDoctor,
                 contentEng: null,
                 gender: EGender.any,
@@ -127,8 +103,8 @@ export default class BackEngine extends BaseEngine {
                 maxAge: null
             },
             {
-                contentEst: "esmane seljavalu, mis oluliselt ei takista kõndimist",
-                result: EResult.Pharmacy,
+                contentEst: "palavik koos ülemiste hingamisteede külmetushaigusega",
+                result: EResult.FamilyDoctor,
                 contentEng: null,
                 gender: EGender.any,
                 minAge: null,
