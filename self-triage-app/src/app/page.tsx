@@ -38,13 +38,14 @@ export default function Home() {
     }
   };
 
-  const switchEngine = (engine: BaseEngine) => {
+  const switchEngine = async (engine: BaseEngine) => {
     if (age) {
       engine.setAge(age)
     }
     if (gender) {
       engine.setGender(gender)
     }
+    await new Promise(r => setTimeout(r, 500))
     setCurrentEngine(engine);
   };
 
@@ -75,7 +76,23 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col w-full text-center justify-center content-center h-screen">
+    <div className="flex flex-col w-full text-center mt-14 content-center h-screen">
+      <h1 className='text-2xl'>Kui teil on järgnevad sümbptomid palun pöörduge kohe: </h1>
+      <br/>
+      <ul className='space-y-2 text-xl text-justify px-40'>
+        <li>südame infarkti tunnused - valu rinnus, tugev rõhuvpigistav, kõrvetav rindkerevalu.</li>
+        <li>surve, raskustunne, pigistustunne või üle rindkere pigistamine.</li>
+        <li>insuldi tunnused -nägu vajub viltu, üks suunurk alla, ei suuda mõlemat kätt tõsta, rääkimisraskused, ühe keha poole nõrkus.</li>
+        <li>äkiline segasus (deliirium)-segadus seisund, inimene ei tea oma nime, vanust.</li>
+        <li>enesetapukatse -enese vigastus, on söönud suures koguses ravimeid või muud kemikaalide.</li>
+        <li>tõsine hingamisraskus -suutmatus sõnu välja öelda, lämbub või ahmib õhku</li>
+        <li>suur verejooks -pritsiv, joana voolav veri, et tekiks lomp</li>
+        <li>rasked vigastused -pärast tõsist õnnetust</li>
+        <li>krambihoog (kramp) -värisemine või tõmblemine või teadvuseta (ei saa äratada)</li>
+        <li>allergiline raksioon - kiiresti tekkiv huulte-, suus-, kõri- või keele turse</li>
+        <li>sünnitus -lootevee ära tulemine, sagedasemad kui 5 minutit intensiivsed tuhude esinemine (kontraktsioonid), lapse kohe tulek või äsja sündinud. </li>
+      </ul>
+      <br/>
       {result ? (
         <div>
           <p>{result}</p>
@@ -110,7 +127,6 @@ export default function Home() {
           >
             <option value={EGender.male}>Mees</option>
             <option value={EGender.female}>Naine</option>
-            <option value={EGender.any}>Muu</option>
           </select>
           <button type="button" className="border-4 border-darkGreen bg-darkerGreen p-2 mt-4" onClick={validateGender}>
             edasi
@@ -118,10 +134,11 @@ export default function Home() {
         </div>
       ) : !currentEngine ? (
         <div>
-          <p>Millises piirkonnas on probleemid</p>
-          <div className='flex flex-row w-full justify-center space-x-4'>
+          <h1 className='text-4xl'>Millises piirkonnas on probleemid?</h1>
+          <br/>
+          <div className='grid grid-flow-row grid-cols-3 mx-40 gap-3'>
             {engineList.engines.map((engine, i) => (
-              <button key={i} className='border-4 border-darkGreen bg-darkerGreen text-white'
+              <button key={i} className='border-4 hover:scale-105 duration-200 focus:animate-jump-out animate-duration-500 animate-delay-200 animate-ease-out border-darkGreen bg-darkerGreen text-white py-3 '
               onClick={() => switchEngine(engine)}>{engine.getName()}</button>
             ))}
             </div>
