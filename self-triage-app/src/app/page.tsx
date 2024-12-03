@@ -77,20 +77,19 @@ export default function Home() {
 
   return (
     <div className="flex flex-col w-full text-center mt-14 content-center h-screen">
-      <h1 className='text-2xl'>Kui teil on järgnevad sümbptomid palun pöörduge kohe: </h1>
+      <h1 className='text-2xl'>Kui teil on järgnevad sümptomid, palun helistage 112: </h1>
       <br/>
       <ul className='space-y-2 text-xl text-justify px-40'>
-        <li>südame infarkti tunnused - valu rinnus, tugev rõhuvpigistav, kõrvetav rindkerevalu.</li>
-        <li>surve, raskustunne, pigistustunne või üle rindkere pigistamine.</li>
+        <li>südame infarkti tunnused - valu rinnus, tugev rõhuvpigistav, kõrvetav rindkerevalu, surve, raskustunne, pigistustunne rindkeres.</li>
         <li>insuldi tunnused -nägu vajub viltu, üks suunurk alla, ei suuda mõlemat kätt tõsta, rääkimisraskused, ühe keha poole nõrkus.</li>
-        <li>äkiline segasus (deliirium)-segadus seisund, inimene ei tea oma nime, vanust.</li>
-        <li>enesetapukatse -enese vigastus, on söönud suures koguses ravimeid või muud kemikaalide.</li>
+        <li>äkiline segasus (deliirium)-segadusseisund, inimene ei oska öelda oma nime, vanust.</li>
+        <li>enesetapukatse -enese vigastus,suurtes kogustes ravimite või muude kemikaalide tarvitamise kahtlus.</li>
         <li>tõsine hingamisraskus -suutmatus sõnu välja öelda, lämbub või ahmib õhku</li>
         <li>suur verejooks -pritsiv, joana voolav veri, et tekiks lomp</li>
         <li>rasked vigastused -pärast tõsist õnnetust</li>
         <li>krambihoog (kramp) -värisemine või tõmblemine või teadvuseta (ei saa äratada)</li>
-        <li>allergiline raksioon - kiiresti tekkiv huulte-, suus-, kõri- või keele turse</li>
-        <li>sünnitus -lootevee ära tulemine, sagedasemad kui 5 minutit intensiivsed tuhude esinemine (kontraktsioonid), lapse kohe tulek või äsja sündinud. </li>
+        <li>allergiline reaksioon - kiiresti tekkiv huulte-, suu-, kõri- või keeleturse</li>
+        <li>sünnitus -lootevee puhkemine, sagedasemad kui 5 minutit intensiivsed tuhude esinemine (kontraktsioonid),  vastsündinu</li>
       </ul>
       <br/>
       {result ? (
@@ -134,7 +133,7 @@ export default function Home() {
         </div>
       ) : !currentEngine ? (
         <div>
-          <h1 className='text-4xl'>Millises piirkonnas on probleemid?</h1>
+          <h1 className='text-4xl'>Vali valulik piirkond või sümptom:</h1>
           <br/>
           <div className='grid grid-flow-row grid-cols-3 mx-40 gap-3'>
             {engineList.engines.map((engine, i) => (

@@ -6,7 +6,7 @@ import { EResult } from "@/types/HelperEnums/EResult";
 export default class StomachEngine extends BaseEngine {
 
     constructor(gender: EGender, age: number) {
-        super("kõhu probleemid", gender, age, [
+        super("kõht (seede- ja suguelundkond)", gender, age, [
             {
                 contentEst: "kõhuvalu + kahvatud, higine, segasusseisund või suur nõrkustunne",
                 result: EResult.EmergencyRoom,
