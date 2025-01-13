@@ -201,7 +201,8 @@ export default function Home() {
                       onClick={() => switchEngine(engine)}
                       className="p-4 bg-gradient-to-r from-[#2D5A27] to-[#8FCA5B] rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 font-semibold"
                     >
-                      {engine.getName()}
+                      {engine.getName().charAt(0).toUpperCase() +
+                        engine.getName().slice(1)}
                     </button>
                   ))}
                 </div>

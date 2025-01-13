@@ -1,12 +1,28 @@
+import { EResult } from "@/types/HelperEnums/EResult";
 import { EGender } from "@/types/HelperEnums/EGender";
 import { BaseEngine } from "./BaseEngine";
-import { EResult } from "@/types/HelperEnums/EResult";
 
-export default class FeverEngine extends BaseEngine {
+export default class InflammationEngine extends BaseEngine {
   constructor(gender: EGender, age: number) {
-    super("Palavik", gender, age, [
+    super("paikne põletik", gender, age, [
       {
-        contentEst: "ravile allumatu kõrge palavik (38.5°C+)",
+        contentEst: "halvalõhnanine eritis rinnanibudest",
+        result: EResult.EmergencyRoom,
+        contentEng: null,
+        gender: EGender.female,
+        minAge: 18,
+        maxAge: null,
+      },
+      {
+        contentEst: "kuumav, punetav, tihke tükiga rind",
+        result: EResult.EmergencyRoom,
+        contentEng: null,
+        gender: EGender.female,
+        minAge: 18,
+        maxAge: null,
+      },
+      {
+        contentEst: "hambajuurepõletik näo turse ning suu avamine raksendatud",
         result: EResult.EmergencyRoom,
         contentEng: null,
         gender: EGender.any,
@@ -14,7 +30,7 @@ export default class FeverEngine extends BaseEngine {
         maxAge: null,
       },
       {
-        contentEst: "palavik + hingeldus, kahvatus, külm higi",
+        contentEst: "suured mädanikud millega kaasneb valu ja palavik",
         result: EResult.EmergencyRoom,
         contentEng: null,
         gender: EGender.any,
@@ -22,7 +38,7 @@ export default class FeverEngine extends BaseEngine {
         maxAge: null,
       },
       {
-        contentEst: "suu avamise häire koos näo- ja kaela tursega",
+        contentEst: "haav koos kiiresti areneva turse(paistetus) ja palavikuga",
         result: EResult.EmergencyRoom,
         contentEng: null,
         gender: EGender.any,
@@ -30,50 +46,7 @@ export default class FeverEngine extends BaseEngine {
         maxAge: null,
       },
       {
-        contentEst: "vedelikupuudusega koos oksendamise ja/või kõhulahtisusega",
-        result: EResult.EmergencyRoom,
-        contentEng: null,
-        gender: EGender.any,
-        minAge: null,
-        maxAge: null,
-      },
-      {
-        contentEst:
-          "peavalu, valguskartus, lõuga  ei saa rinnale panna (kuklakangestus)",
-        result: EResult.EmergencyRoom,
-        contentEng: null,
-        gender: EGender.any,
-        minAge: null,
-        maxAge: null,
-      },
-      {
-        contentEst:
-          "hiljutine reis (2 nädalat) epidemiloogilise infektsioonhaiguse riskiga riiki",
-        result: EResult.EmergencyRoom,
-        contentEng: null,
-        gender: EGender.any,
-        minAge: null,
-        maxAge: null,
-      },
-      {
-        contentEst: "immuunpuudulikkus",
-        result: EResult.EmergencyRoom,
-        contentEng: null,
-        gender: EGender.any,
-        minAge: null,
-        maxAge: null,
-      },
-      {
-        contentEst:
-          "kõrge palavik(38.5°C+) koos hingeldusega mis ei allu ravile",
-        result: EResult.EmergencyRoom,
-        contentEng: null,
-        gender: EGender.any,
-        minAge: null,
-        maxAge: null,
-      },
-      {
-        contentEst: "viis või enam päeva kestnud väike palavik",
+        contentEst: "kuumav punetav laik jäsemel või näol palavikuta",
         result: EResult.FamilyDoctor,
         contentEng: null,
         gender: EGender.any,
@@ -81,7 +54,7 @@ export default class FeverEngine extends BaseEngine {
         maxAge: null,
       },
       {
-        contentEst: "valulik köha",
+        contentEst: "pehmete kudede põletik(paise mädane muhk jmt)",
         result: EResult.FamilyDoctor,
         contentEng: null,
         gender: EGender.any,
@@ -90,7 +63,7 @@ export default class FeverEngine extends BaseEngine {
       },
       {
         contentEst:
-          "palavik + korduv, mõõduka tugevusega peavalu, mis ei allu ravimitele",
+          "nahapõletik (lööve -laigud, täpid, sügelus, kipitus, ketendus",
         result: EResult.FamilyDoctor,
         contentEng: null,
         gender: EGender.any,
@@ -98,8 +71,7 @@ export default class FeverEngine extends BaseEngine {
         maxAge: null,
       },
       {
-        contentEst:
-          "ülemiste hingamisteede külmetushaigused, mis on kestnud enam kui viis päeva",
+        contentEst: "herpes",
         result: EResult.FamilyDoctor,
         contentEng: null,
         gender: EGender.any,
@@ -107,8 +79,24 @@ export default class FeverEngine extends BaseEngine {
         maxAge: null,
       },
       {
-        contentEst: "palavik koos ülemiste hingamisteede külmetushaigusega",
+        contentEst: "villiline punane, valulik vööna esinev lööve nahal",
         result: EResult.FamilyDoctor,
+        contentEng: null,
+        gender: EGender.any,
+        minAge: null,
+        maxAge: null,
+      },
+      {
+        contentEst: "kroonilised haavandid",
+        result: EResult.FamilyDoctor,
+        contentEng: null,
+        gender: EGender.any,
+        minAge: null,
+        maxAge: null,
+      },
+      {
+        contentEst: "küünevalli põletik",
+        result: EResult.Pharmacy,
         contentEng: null,
         gender: EGender.any,
         minAge: null,

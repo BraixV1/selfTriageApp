@@ -4,7 +4,7 @@ import { EResult } from "@/types/HelperEnums/EResult";
 
 export default class BackEngine extends BaseEngine {
   constructor(gender: EGender, age: number) {
-    super("selg", gender, age, [
+    super("Selg", gender, age, [
       {
         contentEst: "esmakordselt tekkinud, kiiresti tugenev valu seljas",
         result: EResult.EmergencyRoom,
