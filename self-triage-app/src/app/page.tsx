@@ -97,7 +97,7 @@ export default function Home() {
                   className="w-full flex justify-between items-center"
                 >
                   <h1 className="text-2xl md:text-3xl font-bold">
-                    Kui teil on järgnevad sümptomid, palun helistage 112:
+                    Helista kohe 112 kui esineb üks või mitu järgnevatest sümptomitest: 
                   </h1>
                   <span
                     className={`transform transition-transform duration-300 ${isEmergencyExpanded ? "rotate-180" : ""}`}
@@ -109,16 +109,12 @@ export default function Home() {
                 {isEmergencyExpanded && (
                   <ul className="space-y-3 text-sm md:text-lg mt-6 animate-fadeIn">
                     {[
-                      "südame infarkti tunnused - valu rinnus, tugev rõhuvpigistav, kõrvetav rindkerevalu, surve, raskustunne, pigistustunne rindkeres.",
-                      "insuldi tunnused -nägu vajub viltu, üks suunurk alla, ei suuda mõlemat kätt tõsta, rääkimisraskused, ühe keha poole nõrkus.",
-                      "äkiline segasus (deliirium)-segadusseisund, inimene ei oska öelda oma nime, vanust.",
-                      "enesetapukatse -enese vigastus,suurtes kogustes ravimite või muude kemikaalide tarvitamise kahtlus.",
-                      "tõsine hingamisraskus -suutmatus sõnu välja öelda, lämbub või ahmib õhku",
-                      "suur verejooks -pritsiv, joana voolav veri, et tekiks lomp",
-                      "rasked vigastused -pärast tõsist õnnetust",
-                      "krambihoog (kramp) -värisemine või tõmblemine või teadvuseta (ei saa äratada)",
-                      "allergiline reaktsiooni - kiiresti tekkiv huulte-, suu-, kõri- või keeleturse",
-                      "sünnitus -lootevee puhkemine, sagedasemad kui 5 minutit intensiivsed tuhude esinemine (kontraktsioonid), vastsündinu",
+                      "südame infarkti tunnused - tugev rõhuvpigistav kõrvetav valu rinnus kiirgusega kätte/kätesse, abaluude vahele, selga, lõuga, ülakõhtu.",
+                      "insuldi tunnused -äkki tekkinud ühe keha poole nõrkus ja/või jäsemete tundlikuse muutus/nõrkus (ei suuda kätt/käsi tõsta) ja/või äkki tekkinud kõnetakistus ja/või inimesel on üks suunurk alla vajunud (näo poole allavaje).",
+                      "suur verejooks - pritsiv, joana voolav veri -suru käega tugevasti haavale proovi verejooks survega peatada.",
+                      "allergiline reaktsioon - kiiresti tekkiv huulte-, suu-, kõri- või keeleturse, hingamis takistus",
+                      "sünnitus -lootevee puhkemine, sagedasemad kui 5 minutit intensiivsed tuhude esinemine (kontraktsioonid), lapse kohe tulek või äsja sündinud.",
+                      "enesetapukatse -enese vigastus, on söönud suures koguses ravimeid või muud kemikaalide tarvitanud inimene"
                     ].map((symptom, index) => (
                       <li
                         key={index}
@@ -138,7 +134,9 @@ export default function Home() {
           <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 transition-all duration-300 hover:shadow-lg">
             {result ? (
               <div className="text-xl md:text-2xl font-semibold animate-fadeIn">
-                <p>{result}</p>
+                  {result.split(".").map((item, index) => (
+                    <p key={index}>{item.trim()}</p>
+                  ))}
               </div>
             ) : !ageFlag ? (
               <div className="space-y-4 animate-fadeIn">
@@ -169,7 +167,7 @@ export default function Home() {
               </div>
             ) : !genderFlag ? (
               <div className="space-y-4 animate-fadeIn">
-                <p className="text-xl font-semibold">Palun vali oma sugu:</p>
+                <p className="text-xl font-semibold">Palun vali oma bioloogiline  sugu:</p>
                 <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
                   <select
                     value={gender ?? EGender.male}

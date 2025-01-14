@@ -17,6 +17,7 @@ import StomachEngine from "./StomachEngine";
 import InflammationEngine from "./InflammationEngine";
 import TraumaEngine from "./TraumaEngine";
 import PoisoningEngine from "./PoisoningEnngine";
+import ToothEngine from "./ToothEngine";
 
 export class Engines {
   public engines: BaseEngine[] = [
@@ -37,5 +38,6 @@ export class Engines {
     new PsycheEngine(EGender.any, -1),
     new TraumaEngine(EGender.any, -1),
     new PoisoningEngine(EGender.any, -1),
+    new ToothEngine(EGender.any, -1),
   ];
 }

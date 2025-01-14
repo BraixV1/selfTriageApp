@@ -13,7 +13,7 @@ export default function About() {
 
             <div className="space-y-8 animate-fadeIn">
               <section className="space-y-4">
-                <h2 className="text-2xl font-semibold text-[#C5E063]">
+                <h2 className="text-2xl font-semibold text-[#4e5e17]">
                   Meie Missioon
                 </h2>
                 <p className="text-lg">
@@ -25,7 +25,7 @@ export default function About() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-semibold text-[#C5E063]">
+                <h2 className="text-2xl font-semibold text-[#4e5e17]">
                   Kuidas Me Töötame
                 </h2>
                 <p className="text-lg">
@@ -39,7 +39,7 @@ export default function About() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-semibold text-[#C5E063]">
+                <h2 className="text-2xl font-semibold text-[#4e5e17]">
                   Oluline Teada
                 </h2>
                 <div className="bg-white/5 p-6 rounded-lg">
@@ -60,7 +60,7 @@ export default function About() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-semibold text-[#C5E063]">
+                <h2 className="text-2xl font-semibold text-[#4e5e17]">
                   Võta Meiega Ühendust
                 </h2>
                 <p className="text-lg">
