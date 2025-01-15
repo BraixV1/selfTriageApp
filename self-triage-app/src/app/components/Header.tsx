@@ -7,7 +7,7 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto flex flex-wrap items-center justify-between">
         <Link
           href="/"
-          className="text-white text-2xl font-bold transition-all duration-300 hover:scale-105"
+          className="text-2xl font-bold transition-all duration-300 hover:scale-105"
         >
           TerviseNõunik
         </Link>
@@ -15,13 +15,13 @@ const Header = () => {
         <div className="flex space-x-6">
           <Link
             href="/"
-            className="text-white hover:text-[#C5E063] transition-all duration-300"
+            className="hover:text-white transition-all duration-300"
           >
             Avaleht
           </Link>
           <Link
             href="/about"
-            className="text-white hover:text-[#C5E063] transition-all duration-300"
+            className="hover:text-white transition-all duration-300"
           >
             Meist
           </Link>

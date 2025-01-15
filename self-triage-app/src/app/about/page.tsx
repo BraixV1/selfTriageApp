@@ -3,7 +3,7 @@ import Header from "../components/Header";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-t from-[#2D5A27] via-[#8FCA5B] to-[#C5E063] text-white">
+    <div className="min-h-screen bg-gradient-to-t from-[#2D5A27] via-[#8FCA5B] to-[#C5E063] text-black">
       <Header />
 
       <main className="p-4">
