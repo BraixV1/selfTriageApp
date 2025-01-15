@@ -33,8 +33,8 @@ export default function About() {
                   teadmistebaasil ja algoritmidel, mis aitavad tuvastada
                   võimalikke tervisemuresid läbi sihipäraste küsimuste. Meie
                   lahendus ei asenda arsti konsultatsiooni, vaid aitab teil
-                  paremini mõista oma sümptomeid ja otsustada edasise tegevuse
-                  üle.
+                  paremini mõista oma haigussümptomeid ja otsustada edasise
+                  tegevuse üle.
                 </p>
               </section>
 
