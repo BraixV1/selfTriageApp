@@ -1,13 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BaseEngine } from "@/engine/BaseEngine";
 import { EResult } from "@/types/HelperEnums/EResult";
 import { EGender } from "@/types/HelperEnums/EGender";
-import { Engines } from "@/engine/Engines";
 import Header from "./components/Header";
+import { setupEngines } from "./EngineData/engineData.";
 
 export default function Home() {
-  const [engineList] = useState(() => new Engines());
+  const [engineList, setEngineList] = useState<BaseEngine[]>([]);
   const [currentEngine, setCurrentEngine] = useState<BaseEngine | null>();
   const [result, setResult] = useState<EResult | null>(null);
   const [dummyState, setDummyState] = useState(false);
@@ -76,6 +76,16 @@ export default function Home() {
   const toggleEmergency = () => {
     setIsEmergencyExpanded(!isEmergencyExpanded);
   };
+
+  const FetchData = async () => {
+    const data = await setupEngines();
+    setEngineList(data);
+    console.log(data);
+  };
+
+  useEffect(() => {
+    FetchData();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-t from-[#2D5A27] via-[#8FCA5B] to-[#C5E063] text-black p-4">
@@ -195,7 +205,7 @@ export default function Home() {
                   Vali valulik piirkond või sümptom:
                 </h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {engineList.engines.map((engine, i) => (
+                  {engineList.map((engine, i) => (
                     <button
                       key={i}
                       onClick={() => switchEngine(engine)}
