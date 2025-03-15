@@ -1,9 +1,7 @@
 import { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  basePath: '/',
-  assetPrefix: '/', // Add this line
+  output: 'export',// Add this line
   images: {
     unoptimized: true,
   },
