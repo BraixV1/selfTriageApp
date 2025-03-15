@@ -2,8 +2,8 @@ import { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/selfTriageApp',
-  assetPrefix: '/selfTriageApp/', // Add this line
+  basePath: '/',
+  assetPrefix: '/', // Add this line
   images: {
     unoptimized: true,
   },
