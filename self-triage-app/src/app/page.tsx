@@ -78,6 +78,7 @@ export default function Home() {
   };
 
   const FetchData = async () => {
+    console.log("Fetching data...");
     const data = await setupEngines();
     setEngineList(data);
     console.log(data);

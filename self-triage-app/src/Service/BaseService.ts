@@ -6,7 +6,7 @@ export abstract class BaseService {
 
   constructor(baseUrl: string, accessToken?: string) {
     this.httpClient = axios.create({
-      baseURL: BaseService.hostBaseURL + baseUrl,
+      baseURL: baseUrl,
       headers: {
         "Content-Type": "application/json",
         ...(accessToken && { Authorization: `Bearer ${accessToken}` }),

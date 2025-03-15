@@ -18,9 +18,10 @@ export abstract class BaseEntityService<TEntity> extends BaseService {
     if (queryParams && queryKey) {
       params[queryKey] = queryParams;
     }
-
+    console.log("I am here");
     try {
       const response = await this.httpClient.get("", { params });
+      
       if (response.status < 300) {
         const csvData: string = response.data;
         // Parse CSV with headers
@@ -57,6 +58,7 @@ export abstract class BaseEntityService<TEntity> extends BaseService {
     if (error.response) {
       return `${error.response.data.title}`;
     } else {
+      console.log(`An error occurred: ${error.message}`);
       return `An error occurred: ${error.message}`;
     }
   }
