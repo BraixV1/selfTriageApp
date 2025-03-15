@@ -1,7 +1,7 @@
 import { stringToGender } from "@/Helpers/Converter";
 import { IResultObject } from "../types/IResultObject";
 import { BaseService } from "./BaseService";
-import Papa from "papaparse";
+import Papa from 'papaparse';
 
 export abstract class BaseEntityService<TEntity> extends BaseService {
   private params: Record<string, string> = {};

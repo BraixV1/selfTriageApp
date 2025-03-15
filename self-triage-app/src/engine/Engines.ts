@@ -1,23 +1,5 @@
-import { EGender } from "@/types/HelperEnums/EGender";
-import HeadacheEngine from "./HeadacheEngine";
 import { BaseEngine } from "./BaseEngine";
-import NeurologyEngine from "./NeurologoyEngine";
-import EyeEngine from "./EyeEngine";
-import NoseEngine from "./NoseEngine";
-import ThroatEngine from "./ThroatEngine";
-import BackEngine from "./BackEngine";
-import AllergyAndBugBiteEngine from "./AllergyAndBugBiteEngine";
-import BreathingEngine from "./BreathingEngine";
-import ChestEngine from "./ChestEngine";
-import EarEngine from "./EarEngine";
-import FeverEngine from "./FeverEngine";
-import LimbEngine from "./LimbEngine";
-import PsycheEngine from "./PsycheEngine";
-import StomachEngine from "./StomachEngine";
-import InflammationEngine from "./InflammationEngine";
-import TraumaEngine from "./TraumaEngine";
-import PoisoningEngine from "./PoisoningEnngine";
-import ToothEngine from "./ToothEngine";
+
 
 export class Engines {
   private chestEngineID = "1uYJ6vAG4S5nSv5dCLkCxbnEycPK7QYLZ5q63pnyqvDs";
